@@ -39,28 +39,34 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 </p>
 <p>
-Part 1: Install Active Directory
+Summary of Steps for Setting Up Remote Desktop for Non-Administrative Users on Client-1
 
-1.Login to DC-1: Log in to the server designated as DC-1.
+1.Log into Client-1 as mydomain.com\jane_admin:
 
-2.Install Active Directory Domain Services: Use the Server Manager to add the Active Directory Domain Services (AD DS) role to the server.
+Log into the Client-1 machine using an administrative account.
 
-3.Promote DC-1 to Domain Controller:
+2.Enable Remote Desktop for Domain Users:
 
-During the AD DS installation, you'll be prompted to promote the server to a domain controller.
-Choose the option to set up a new forest and enter your domain name (e.g., mydomain.com).
+Open System Properties on Client-1.
+Go to the Remote Desktop section and allow access for domain users (e.g., domain users group).
 
-4.Restart the Server: After the promotion is complete, restart the server to apply changes.
+3.Create Additional Users:
 
-5.Login as User: After the server restarts, log back into DC-1 as the user mydomain.com\labuser.
-</p>
-<br />
+Log into DC-1 (Domain Controller) as jane_admin.
+Open PowerShell_ise as Administrator.
+Create a script to generate multiple user accounts.
+Run the script and monitor the creation of accounts.
 
-<p>
+4.Verify Account Creation in Active Directory Users and Computers (ADUC):
 
-5.Organize Client-1 in ADUC:
+After running the script, open Active Directory Users and Computers (ADUC).
+Check that the new accounts are in the appropriate organizational unit (_EMPLOYEES).
 
-Create a new OU called _CLIENTS in ADUC.
-Drag Client-1 into the _CLIENTS OU.
+5.Test Remote Desktop Access:
+
+Log into Client-1 with one of the newly created non-administrative user accounts (refer to the password specified in the script).
+Ensure that the user is able to log in successfully via Remote Desktop.
+
+The remote desktop access should now be available for non-administrative users, and you can verify the creation of accounts and their ability to log in on Client-1.
 </p>
 <br />
