@@ -25,11 +25,23 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Active Directory Domain Services were installed and configured on DC-1, promoting it to a Domain Controller with the domain mydomain.com.
+-Enable Remote Desktop on Client-1:
 
-- Two Organizational Units (OUs) were created: _EMPLOYEES and _ADMINS. A Domain Admin user (jane_admin) was set up and added to the Domain Admins group.
+Log into Client-1 as jane_admin.
+Allow domain users access to Remote Desktop via System Properties.
 
-- Client-1 was successfully joined to the domain, and its organizational structure was updated by placing it into the _CLIENTS OU in ADUC.
+-Create User Accounts in Active Directory:
+
+Log into DC-1 as jane_admin.
+Use PowerShell to create multiple user accounts in the _EMPLOYEES OU.
+
+-Verify Account Creation:
+
+Check the _EMPLOYEES OU in Active Directory Users and Computers (ADUC) to ensure the accounts were created correctly.
+
+-Test Remote Desktop Access:
+
+Log into Client-1 using one of the new non-administrative user accounts to confirm Remote Desktop access works.
 
 <h2>Deployment and Configuration Steps</h2>
 
