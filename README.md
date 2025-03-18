@@ -47,8 +47,7 @@ Log into Client-1 using one of the new non-administrative user accounts to confi
 
 <p>
   
-![Image](https://github.com/user-attachments/assets/fd581858-db9a-40ec-ab7c-e288d1315944)
-
+![Image](https://github.com/user-attachments/assets/55a81b3c-8e81-453f-b3b2-df50bad2fcbb)
 </p>
 <p>
 Summary of Steps for Setting Up Remote Desktop for Non-Administrative Users on Client-1
